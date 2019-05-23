@@ -39,7 +39,7 @@ int E(float t){
 
 
 void solucion_salt_rana(float t1, float t2, float dt, string nombreArc){
-	float q=2;
+	float q=2,m=7294.29;
     float t=t1,x_n=1.0,y_n=0.0,xp_n=0.0,yp_n=1.0;
 
     float y_n1,yp_n0o5,yp_n1,x_n1,xp_n0o5,xp_n1;
@@ -52,13 +52,13 @@ void solucion_salt_rana(float t1, float t2, float dt, string nombreArc){
 
     while(t<=t2){
 
-        yp_n0o5=yp_n+q*E(t)*dt/2;
+        yp_n0o5=yp_n+q*E(t)*dt/(2*m);
 
         y_n1=y_n+yp_n0o5*dt;
 
         yp_n1=yp_n0o5+q*E(t)*dt/2;
         
-        xp_n0o5=xp_n+0*q*E(t)*dt/2;
+        xp_n0o5=xp_n+0*q*E(t)*dt/(2*m);
 
         x_n1=x_n+xp_n0o5*dt;
 
